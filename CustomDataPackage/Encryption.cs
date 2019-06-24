@@ -9,6 +9,7 @@
  * Copyright (C) 2019 Peter Naambo
  * File: Encryption.cs
  */
+
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;

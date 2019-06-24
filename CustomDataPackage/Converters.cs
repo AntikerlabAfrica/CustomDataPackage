@@ -9,6 +9,7 @@
  * Copyright (C) 2019 Peter Naambo
  * File: Converters.cs
  */
+
 using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
