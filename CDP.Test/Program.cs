@@ -9,12 +9,17 @@ namespace CDP.Test
         {
             try
             {
-                var data = DataPackage.Package(0x1A, "TestVersion", 0x2A, "Test Payload");
-                var obj = DataPackage.Package(data);
-                Console.WriteLine(DataPackage.GetHeader(obj));
-                Console.WriteLine(DataPackage.GetVersion(obj));
-                Console.WriteLine(DataPackage.GetAuth(obj));
-                Console.WriteLine(DataPackage.GetPayload(obj));
+                //Init DataPackageCreator
+                CreateDataPackage createDataPackage = new CreateDataPackage(0x1A, "TestVersion2", 0x2A, "Test Payload");
+                var data = createDataPackage.CreatePackage();
+
+
+                //Init DataPackageReader
+                ReadDataFromPackage Data = new ReadDataFromPackage(data);
+                Console.WriteLine(Data.GetHeader());
+                Console.WriteLine(Data.GetVersion());
+                Console.WriteLine(Data.GetAuth());
+                Console.WriteLine(Data.GetPayload());
 
             }
             catch (Exception e)
