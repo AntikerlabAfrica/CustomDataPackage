@@ -1,11 +1,23 @@
-﻿using System;
+﻿/* 
+ * Copyright (C) 2019 Antikerlab Africa - All Rights Reserved
+ * You may use, distribute and modify this code under the
+ * terms of the Antikerlab Africa Public Source license.
+ *
+ * You should have received a copy of the license with
+ * this file. If not, please write to: license@antikerlab.africa , or visit : http://license.antikerlab.africa
+ *
+ * Copyright (C) 2019 Peter Naambo
+ * File: API.cs
+ */
+
+using System;
 using System.Reflection;
 
 namespace CDP
 {
-    public class CreateDataPackage
+    public class DataPackage
     { 
-        public CreateDataPackage(byte Header, string Version, byte Auth, string Payload)
+        public DataPackage(byte Header, string Version, byte Auth, string Payload)
         {
             h = Header;
             v = Version;
@@ -18,7 +30,7 @@ namespace CDP
         internal byte a;
         internal string p;
 
-        public byte[] CreatePackage()
+        public byte[] Create()
         {
             Package package = new Package
             {
@@ -32,9 +44,9 @@ namespace CDP
 
     }
 
-    public class ReadDataFromPackage
+    public class ReadPackage
     {
-        public ReadDataFromPackage(byte[] PKG)
+        public ReadPackage(byte[] PKG)
         {
             pkg = PKG;
         }

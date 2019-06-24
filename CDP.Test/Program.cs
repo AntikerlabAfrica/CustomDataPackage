@@ -10,12 +10,12 @@ namespace CDP.Test
             try
             {
                 //Init DataPackageCreator
-                CreateDataPackage createDataPackage = new CreateDataPackage(0x1A, "TestVersion2", 0x2A, "Test Payload");
-                var data = createDataPackage.CreatePackage();
+                DataPackage createDataPackage = new DataPackage(0x1A, "TestVersion2", 0x2A, "Test Payload");
+                var data = createDataPackage.Create();
 
 
                 //Init DataPackageReader
-                ReadDataFromPackage Data = new ReadDataFromPackage(data);
+                ReadPackage Data = new ReadPackage(data);
                 Console.WriteLine(Data.GetHeader());
                 Console.WriteLine(Data.GetVersion());
                 Console.WriteLine(Data.GetAuth());
