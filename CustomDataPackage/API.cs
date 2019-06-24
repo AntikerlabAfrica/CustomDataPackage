@@ -9,10 +9,6 @@
  * Copyright (C) 2019 Peter Naambo
  * File: API.cs
  */
-
-using System;
-using System.Reflection;
-
 namespace CDP
 {
     public class DataPackage

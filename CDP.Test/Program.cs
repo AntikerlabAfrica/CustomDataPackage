@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 
 namespace CDP.Test
 {
@@ -10,7 +9,7 @@ namespace CDP.Test
             try
             {
                 //Init DataPackageCreator
-                DataPackage createDataPackage = new DataPackage(0x1A, "TestVersion2", 0x2A, "Test Payload");
+                DataPackage createDataPackage = new DataPackage(0x1A, "TestVersion", 0x2A, "Test Payload");
                 var data = createDataPackage.Create();
 
 
