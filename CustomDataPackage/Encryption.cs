@@ -1,4 +1,4 @@
-﻿/* 
+/* 
  * Copyright (C) 2019 Antikerlab Africa - All Rights Reserved
  * You may use, distribute and modify this code under the
  * terms of the Antikerlab Africa Public Source license.
@@ -14,11 +14,11 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace CDP
+namespace Antikerlab.CDP
 {
-    public class Encryption
+    internal class Encryption
     {
-        private byte[] Crypto(ICryptoTransform cryptoTransform, byte[] data)
+        internal byte[] Crypto(ICryptoTransform cryptoTransform, byte[] data)
         {
             using (var memoryStream = new MemoryStream())
             {
@@ -31,7 +31,7 @@ namespace CDP
             }
         }
 
-        public byte[] Encrypt(byte[] data, string key, string iv)
+        internal byte[] Encrypt(byte[] data, string key, string iv)
         {
             DESCryptoServiceProvider cryptic = new DESCryptoServiceProvider
             {
@@ -43,7 +43,7 @@ namespace CDP
 
         }
 
-        public byte[] Decrypt(byte[] data, string key, string iv)
+        internal byte[] Decrypt(byte[] data, string key, string iv)
         {
             DESCryptoServiceProvider cryptic = new DESCryptoServiceProvider
             {
